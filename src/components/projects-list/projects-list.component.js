@@ -3,9 +3,7 @@ import controller from './projects-list.controller';
 
 // export default { template };
 
-export default () => ({
+export default {
   template,
-  controller,
-  controllerAs: '$ctrl',
-  bindToController: true
-});
+  controller
+};
