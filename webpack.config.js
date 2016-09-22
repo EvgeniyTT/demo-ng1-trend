@@ -25,7 +25,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanPlugin(['build']),
+    new CleanPlugin(['docs']),
     new ExtractTextPlugin('[name]-[hash].css'),
     // new webpack.optimize.DedupePlugin(),
     new HtmlWebpackPlugin({

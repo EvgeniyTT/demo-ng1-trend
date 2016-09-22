@@ -5,7 +5,7 @@
   </div>
   <div class="ibox-content">
     <div class="team-members" ng-if="$ctrl.item.owner">
-      <a ng-href="{{$ctrl.item.owner.html_url}}"><img alt="member" class="img-circle" ng-src="{{ $ctrl.item.owner.avatar_url }}" src="./img/a1.jpg"></a>
+      <a ng-href="{{$ctrl.item.owner.html_url}}"><img alt="member" class="img-circle" ng-src="{{ $ctrl.item.owner.avatar_url }}"></a>
     </div>
     <h4 ng-bind="'Info about ' + $ctrl.item.name"></h4>
     <p ng-bind="$ctrl.item.description"></p>
