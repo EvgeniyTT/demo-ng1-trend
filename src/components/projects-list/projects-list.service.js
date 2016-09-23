@@ -1,3 +1,5 @@
+/* global TOKEN */
+
 export default class ProjectService {
   constructor($http) {
     'ngInject';
@@ -6,8 +8,42 @@ export default class ProjectService {
 
   list() {
     const date = ProjectService.getDate();
-    const url = `https://api.github.com/search/repositories?q=created:>${date}&sort=stars&order=desc`;
+    const url = `https://api.github.com/search/repositories?q=created:>${date}&sort=stars&order=desc&access_token=${TOKEN}`;
     return this.$http.get(url).then(result => result.data.items);
+  }
+
+  detail(repo) {
+    const url = `https://api.github.com/repos/${repo}?access_token=${TOKEN}`;
+    const data = {};
+    return this.$http.get(url).then((result) => {
+      data.detail = result.data;
+      return data;
+    })
+    .then(result => (this.$http.get(`${result.detail.events_url}?access_token=${TOKEN}`)))
+    .then((result) => {
+      data.events = result.data;
+      return data;
+    })
+    .then(result => (this.$http.get(`${result.detail.contributors_url}?access_token=${TOKEN}`)))
+    .then((result) => {
+      data.contributors = result.data;
+      return data;
+    })
+    .then(result => (this.$http.get(`${result.detail.url}/issues?access_token=${TOKEN}`)))
+    .then((result) => {
+      data.issues = result.data;
+      return data;
+    })
+    .then(result => (this.$http.get(`${result.detail.url}/labels?access_token=${TOKEN}`)))
+    .then((result) => {
+      data.labels = result.data;
+      return data;
+    })
+    .then(result => (this.$http.get(`${result.detail.url}/commits?access_token=${TOKEN}`)))
+    .then((result) => {
+      data.commits = result.data;
+      return data;
+    });
   }
 
   static getDate() {

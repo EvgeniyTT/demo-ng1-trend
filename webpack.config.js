@@ -33,7 +33,8 @@ module.exports = {
       inject: 'body'
     }),
     new webpack.DefinePlugin({
-      API: JSON.stringify('http://localhost:3000')
+      API: JSON.stringify('http://localhost:3000'),
+      TOKEN: JSON.stringify('9a4bd6e9b4c1f57dfadab59d8845eb41fbac66d2')
     })
   ]
 };
