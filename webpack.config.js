@@ -4,12 +4,7 @@ const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const token = [
-  'a', '3', 'a', '5', '5', '6', '9', 'c', '6', '0', 'd',
-  'b', '3', '0', '1', '5', 'f', '4', 'f', 'c', '0', 'd',
-  'd', 'a', 'b', 'f', 'e', '6', '2', '6', 'a', 'a', '4',
-  '5', '5', '4', '4', '7', '6', 'd'
-];
+const token = ['1', 'f', 'd', '2', '6', '5', '0', '1', '2', 'd', '2', 'c', '4', '5', '4', '0', '9', '0', 'b', '2', 'd', '0', 'e', '5', '3', '9', 'a', 'a', '2', 'a', '6', 'b', 'b', '5', '0', '3', '9', 'e', 'a', 'f'];
 
 module.exports = {
   context: path.resolve('./src'),
@@ -41,7 +36,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       API: JSON.stringify('http://localhost:3000'),
-      TOKEN: JSON.stringify(token.join(''))
+      TOKEN: JSON.stringify(token)
     })
   ]
 };
