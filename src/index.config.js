@@ -3,7 +3,7 @@ export default ($stateProvider, $urlRouterProvider) => {
   $urlRouterProvider.otherwise('/');
   $stateProvider
     .state({
-      name: 'app',
+      name: 'home',
       url: '/',
       template: '<projects-list></projects-list>'
     })

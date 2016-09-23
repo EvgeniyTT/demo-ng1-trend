@@ -34,7 +34,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       API: JSON.stringify('http://localhost:3000'),
-      TOKEN: JSON.stringify('9a4bd6e9b4c1f57dfadab59d8845eb41fbac66d2')
+      TOKEN: JSON.stringify('d0774b885da24140eb129dce482bc9e72dbb76c8')
     })
   ]
 };
