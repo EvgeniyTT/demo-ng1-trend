@@ -1,10 +1,11 @@
 Angular 1.x Demo Application
 ============================
 
-Demo Application works with GitHub API for getting info of trend projects by the week.
+Demo Application works with GitHub API for getting info of trend projects by the week. [Demo](http://nixsolutions.github.io/demo-ng1-trend).
 
 The "Angular 1.x Demo Application" is a reference application created to show how
 to develop Angular SPA applications following the recommended best practices.
+
 
 Requirements
 ------------
