@@ -51,7 +51,7 @@ export default class ProjectService {
     date.setDate(date.getDate() - 7);
     const year = date.getFullYear();
     const month = `0${date.getMonth()}`.slice(-2);
-    const day = date.getDate();
+    const day = `0${date.getDate()}`.slice(-2);
     return `${year}-${month}-${day}`;
   }
 }
